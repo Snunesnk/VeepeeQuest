@@ -1,0 +1,21 @@
+This is a quick description of my implemented easter egg.
+
+The main goal is to collect all the duck appearing on the map. There will only be one duck at a time,
+for a total of 8 ducks to catch.
+
+This easter egg is divided in 3 phases: 
+- First, you will have to find 3 ducks inside the bar. Their locations are (in order of appearance): [18, 17], [32, 15], [15, 10]
+
+- Then, the 4th duck will be outside the bar, you can access it by going through the top left wall, in front of the duck. You will then see the flash of an invisible labyrinth,
+  and the labyrinth will blink every 10 seconds for 0.65s. There will be a total of 3 ducks inside (including the 4th one) : [13, 2], [13, 0], [13, 19].
+  Two layers are used: "secretZone", with an opacity of 0, which corresponds to the collisions blocks, and "secretZoneWalls",
+  which corresponds to the tiles that are going to appear every 10 seconds.
+
+- Eventually, the two remaining ducks will be inside the main room. But hidden tiles will teleport the user to the entrance when stepped over.
+  There is 5 differents zones, delimited by teleporting tiles. To access the 7th duck, you will have to find 4 hidden tiles that will teleport you to the
+  next zone. Those tile are located at [18, 3], [28, 18], [24, 16], [18, 17].
+  Once a delimiting tile is stepped over, it became visible.
+  The teleporting tiles are set inside the layer "teleportationZone"
+  Once the final zone is reached and the 7th duck is caugth, all the hidden tiles will desapear, and a throne will appear near the entrance, with the final duck on it.
+  No trap here, just a congratulation message :)
+  Location of the last two ducks: [15, 13], [23, 4]
