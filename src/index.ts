@@ -110,6 +110,11 @@ function toggleEaster() {
         if (easterEgg.nbDuckCatched < ducks.length - 1) {
             easterEgg.nbDuckCatched += 1;
 
+            // If the first duck is found, show the easter egg message
+            if (easterEgg.nbDuckCatched == 1) {
+                openPopup("easterEgg");
+                setTimeout(() => closePopup(), 5000);
+            }
             // If the third duck is caught, then it's time for some secret passage !
             if (easterEgg.nbDuckCatched === 3) {
                 tiles.push(
@@ -308,7 +313,7 @@ const config: any = {
         ]
     },
     easterEgg: {
-        message: "Oh no... All my ducks escaped :(\nCan you catch them for me please?",
+        message: "You caught a duck !\nCan you catch them all ?",
         buttons: [
             {
                 label: "close",
@@ -320,7 +325,7 @@ const config: any = {
         ]
     },
     congratulation: {
-        message: "Awesome! Thanks for your help!",
+        message: "Awesome! You caught all the ducks !",
         buttons: [
             {
                 label: "close",
@@ -494,8 +499,6 @@ WA.onInit().then(() => {
 
     // Activate Easter egg
     WA.room.onEnterLayer("easterEggZone").subscribe(toggleEaster);
-    openPopup("easterEgg");
-    setTimeout(() => closePopup(), 5000);
 
     // Hide labyrinthe layer
     WA.room.hideLayer("secretZoneWalls");
