@@ -1024,7 +1024,7 @@
         {
          "name":"script",
          "type":"string",
-         "value":"..\/..\/script.js"
+         "value":"..\/..\/src\/index.ts"
         }],
  "renderorder":"right-down",
  "tiledversion":"1.8.4",
